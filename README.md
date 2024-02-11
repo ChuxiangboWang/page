@@ -1,4 +1,4 @@
-# Site settings
+Welcome!
 title: Your Site Title
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
