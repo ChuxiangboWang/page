@@ -123,3 +123,14 @@ body{background:#f8f5ee}
 
 @media(max-width:850px){.hero-bamboo-art{right:-22vw;bottom:10%;height:82%;opacity:.43}.hero-cn-name{right:19px}.hero-courtesy{right:63px;top:16%;font-size:10px}.contact-art{right:-32vw;bottom:-18%;width:105vw;opacity:.14}}
 @media(prefers-reduced-motion:reduce){.hero-courtesy{animation:none;opacity:1;transform:none}}
+
+/* V3.8 — tighter title-to-content rhythm */
+.section{column-gap:5vw;row-gap:2vw}
+.education-list,.interest-list,.publication-list,.activity-list{margin-top:22px}
+@media(max-width:850px){.section{column-gap:18px;row-gap:14px}.education-list,.interest-list,.publication-list,.activity-list{margin-top:14px}}
+
+/* V3.9 — compact all academic sections */
+.section{padding-top:88px;padding-bottom:88px;row-gap:0}
+.section .about-copy,.education-list,.interest-list,.publication-list,.activity-list{margin-top:0}
+.about-copy{padding-top:0}
+@media(max-width:850px){.section{padding-top:64px;padding-bottom:64px;row-gap:0}.section .about-copy,.education-list,.interest-list,.publication-list,.activity-list{margin-top:0}}
