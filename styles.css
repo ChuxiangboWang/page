@@ -134,3 +134,9 @@ body{background:#f8f5ee}
 .section .about-copy,.education-list,.interest-list,.publication-list,.activity-list{margin-top:0}
 .about-copy{padding-top:0}
 @media(max-width:850px){.section{padding-top:64px;padding-bottom:64px;row-gap:0}.section .about-copy,.education-list,.interest-list,.publication-list,.activity-list{margin-top:0}}
+
+/* V3.11 — one compact, consistent title rhythm for every section */
+.section-mark p{margin:12px 18px}
+.section-heading{height:170px;min-height:170px}
+.section-heading h2{font-size:clamp(48px,5vw,70px)}
+@media(max-width:850px){.section-mark p{margin:10px 12px}.section-heading{height:170px;min-height:170px}.section-heading h2{font-size:clamp(38px,10.5vw,48px)}}
