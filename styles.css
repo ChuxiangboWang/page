@@ -140,3 +140,41 @@ body{background:#f8f5ee}
 .section-heading{height:170px;min-height:170px}
 .section-heading h2{font-size:clamp(48px,5vw,70px)}
 @media(max-width:850px){.section-mark p{margin:10px 12px}.section-heading{height:170px;min-height:170px}.section-heading h2{font-size:clamp(38px,10.5vw,48px)}}
+
+/* V3.12 — ink reveals and brush-line publication links */
+html{scroll-behavior:smooth}
+.section,.contact{scroll-margin-top:68px}
+.ink-reveal{opacity:0;filter:blur(2.2px);clip-path:inset(0 5% 0 0);transition:opacity .72s ease,filter .9s ease,clip-path .95s cubic-bezier(.22,.72,.18,1)}
+.ink-reveal-late{transition-delay:.1s}
+.ink-reveal.is-visible{opacity:1;filter:blur(0);clip-path:inset(0 0 0 0)}
+
+.publication-list a b{position:relative;width:fit-content;max-width:100%;padding-bottom:5px}
+.publication-list a b:after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,rgba(39,35,29,.94),rgba(39,35,29,.52) 78%,rgba(39,35,29,0));transform:scaleX(0);transform-origin:left center;transition:transform .48s cubic-bezier(.2,.75,.2,1)}
+.publication-list a i{transition:color .3s ease,transform .3s ease}
+.publication-list a:hover b:after,.publication-list a:focus-visible b:after{transform:scaleX(1)}
+.publication-list a:hover i,.publication-list a:focus-visible i{color:var(--red);transform:translate(3px,-50%)}
+.publication-list a:focus-visible{outline:1px solid rgba(153,53,43,.34);outline-offset:4px}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ink-reveal{opacity:1;filter:none;clip-path:none;transition:none}.publication-list a b:after,.publication-list a i{transition:none}}
+
+/* V3.13 — conference detail hierarchy, copy feedback, and a quiet water echo */
+.activity-detail{max-width:790px;margin:10px 0 0;color:#615a4e;font-family:var(--serif);font-size:15px;line-height:1.5}
+.activity-detail em{display:block;margin:7px 0 0;color:var(--red);font-family:var(--cn);font-size:10px;font-style:normal;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.activity-detail>em:first-child:last-child{margin-top:0}
+.activity-list small{margin-top:7px;color:#81796b;letter-spacing:.07em}
+
+.contact-email{display:grid;justify-items:center;gap:11px}
+.contact-only .email-copy{margin:0;cursor:copy;transition:color .3s ease,border-color .3s ease}
+.contact-only .email-copy:hover,.contact-only .email-copy:focus-visible{color:#fff1ce;border-color:#b6473d}
+.contact-only .email-copy:focus-visible{outline:1px solid rgba(233,219,185,.42);outline-offset:8px}
+.copy-feedback{font-family:var(--cn);font-size:9px;letter-spacing:.18em;color:#8e8775;opacity:.72;transition:color .3s ease,opacity .3s ease}
+.contact-email.is-copied .copy-feedback{color:#c65448;opacity:1}
+.contact .contact-water{position:absolute;z-index:1;left:50%;bottom:-12px;width:min(78vw,900px);height:120px;transform:translateX(-50%);pointer-events:none}
+.contact-water i{position:absolute;left:50%;bottom:15px;width:175px;height:30px;border:1px solid rgba(232,218,184,.28);border-radius:50%;opacity:0;transform:translateX(-50%) scale(.2)}
+.contact.is-rippling .contact-water i{animation:contactRipple 1.75s cubic-bezier(.16,.72,.23,1) forwards}
+.contact.is-rippling .contact-water i:nth-child(2){animation-delay:.18s}
+.contact.is-rippling .contact-water i:nth-child(3){animation-delay:.36s}
+@keyframes contactRipple{0%{opacity:0;transform:translateX(-50%) scale(.2)}14%{opacity:.3}100%{opacity:0;transform:translateX(-50%) scale(4.8)}}
+
+@media(max-width:850px){.activity-detail{font-size:13px}.activity-detail em{display:block;margin:6px 0 0}.contact .contact-water{width:108vw}.contact-water i{width:120px}}
+@media(prefers-reduced-motion:reduce){.contact-water{display:none}.copy-feedback{transition:none}}
